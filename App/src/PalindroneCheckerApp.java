@@ -1,15 +1,17 @@
 /**
  * =========================================================
- * MAIN CLASS - UseCase9RecursivePalindrome
+ * MAIN CLASS - UseCase10PalindromeCheckerApp
  * =========================================================
  *
- * Use Case 9: Recursive Palindrome Checker
+ * Use Case 10: Normalized Palindrome Validation
  *
  * Description:
- * This class validates a palindrome using recursion.
+ * This class validates a palindrome after preprocessing
+ * the input string by removing spaces/symbols and
+ * converting to lowercase.
  *
  * Author: sudheer200502
- * Version: 9.0
+ * Version: 10.0
  */
 
 import java.util.Scanner;
@@ -17,46 +19,40 @@ import java.util.Scanner;
 public class PalindroneCheckerApp {
 
     /**
-     * Application entry point for UC9.
+     * Application entry point for UC10.
      * @param args Command-line arguments
      */
     public static void main(String[] args) {
 
         Scanner sc = new Scanner(System.in);
 
-        System.out.println("=== Palindrome Checker (Recursion Method) ===");
+        System.out.println("=== Palindrome Checker (Normalized Method) ===");
         System.out.print("Enter a string: ");
         String input = sc.nextLine();
 
-        boolean result = check(input, 0, input.length() - 1);
+        // Normalize string: remove non-alphanumeric & convert to lowercase
+        String normalized = input.replaceAll("[^a-zA-Z0-9]", "").toLowerCase();
 
-        if (result) {
+        boolean isPalindrome = true;
+
+        // Compare characters from both ends
+        for (int i = 0; i < normalized.length() / 2; i++) {
+
+            if (normalized.charAt(i) !=
+                    normalized.charAt(normalized.length() - 1 - i)) {
+
+                isPalindrome = false;
+                break;
+            }
+        }
+
+        // Display result
+        if (isPalindrome) {
             System.out.println("Result: The given string is a PALINDROME.");
         } else {
             System.out.println("Result: The given string is NOT a palindrome.");
         }
 
         sc.close();
-    }
-
-    /**
-     * Recursively checks whether a string is palindrome
-     * @param s Input string
-     * @param start Starting index
-     * @param end Ending index
-     * @return true if palindrome, otherwise false
-     */
-    private static boolean check(String s, int start, int end) {
-
-        // Base condition
-        if (start >= end)
-            return true;
-
-        // Mismatch condition
-        if (s.charAt(start) != s.charAt(end))
-            return false;
-
-        // Recursive call
-        return check(s, start + 1, end - 1);
     }
 }

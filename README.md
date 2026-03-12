@@ -1,40 +1,42 @@
-# Palindrome Checker App – Use Case 9 (Recursive Method)
+# Palindrome Checker App – Use Case 10 (Normalized Validation Method)
 
 ## 📌 Project Title
 
-**Palindrome Checker using Recursion (Divide and Conquer Approach)**
+**Palindrome Checker using String Normalization (Case & Symbol Independent Validation)**
 
 ---
 
 ## 📖 Description
 
-This Java console application checks whether a given string is a **palindrome** using **recursion**.
+This Java console application checks whether a given string is a **palindrome after preprocessing (normalization)**.
 
-Characters are compared from the **outer positions moving inward** through recursive method calls.
-The recursion continues until:
+Normalization includes:
 
-* All characters match → Palindrome
-* A mismatch is found → Not Palindrome
+* Removing spaces and special symbols
+* Converting all characters to lowercase
 
-This demonstrates the **divide-and-conquer strategy** using method recursion.
+This ensures the palindrome validation is **logical rather than format dependent**.
+
+Example:
+"A man a plan a canal Panama" → Valid Palindrome after normalization.
 
 ---
 
 ## 🎯 Objective
 
-* To understand **recursion concept**
-* To implement palindrome validation using **recursive calls**
-* To perform **inward symmetric comparison**
-* To improve algorithmic thinking
+* To understand **string preprocessing techniques**
+* To implement **case-insensitive palindrome validation**
+* To ignore spaces and symbols during comparison
+* To improve real-world string handling skills
 
 ---
 
 ## ⚙️ Features
 
 * Accepts user input from console
-* Uses recursive function for validation
-* No extra data structures required
-* Efficient symmetric checking
+* Removes non-alphanumeric characters
+* Converts string to lowercase
+* Performs symmetric comparison
 * Displays whether the string is **Palindrome / Not Palindrome**
 
 ---
@@ -43,21 +45,25 @@ This demonstrates the **divide-and-conquer strategy** using method recursion.
 
 1. Start the program
 2. Read a string from the user
-3. Call recursive function with start = 0 and end = length − 1
-4. If start ≥ end → Palindrome
-5. If characters mismatch → Not Palindrome
-6. Else recursively call for inner substring
-7. Display the result
-8. End the program
+3. Normalize the string:
+
+    * Remove spaces and symbols
+    * Convert to lowercase
+4. Assume palindrome initially
+5. Compare characters from both ends
+6. If mismatch → Not Palindrome
+7. Else continue comparison
+8. Display the result
+9. End the program
 
 ---
 
 ## 💻 Technologies Used
 
 * Java
-* Recursion
+* String Functions (`replaceAll`, `toLowerCase`)
 * Scanner Class
-* Conditional Statements
+* Looping & Conditional Statements
 
 ---
 
@@ -66,13 +72,13 @@ This demonstrates the **divide-and-conquer strategy** using method recursion.
 ### Compile
 
 ```
-javac UseCase9PalindromeCheckerApp.java
+javac UseCase10PalindromeCheckerApp.java
 ```
 
 ### Run
 
 ```
-java UseCase9PalindromeCheckerApp
+java UseCase10PalindromeCheckerApp
 ```
 
 ---
@@ -82,7 +88,7 @@ java UseCase9PalindromeCheckerApp
 **Input**
 
 ```
-Enter a string: racecar
+Enter a string: A man a plan a canal Panama
 ```
 
 **Output**
@@ -94,7 +100,7 @@ Result: The given string is a PALINDROME.
 **Input**
 
 ```
-Enter a string: recursion
+Enter a string: OpenAI
 ```
 
 **Output**
@@ -108,14 +114,14 @@ Result: The given string is NOT a palindrome.
 ## 📊 Time and Space Complexity
 
 * **Time Complexity:** O(n)
-* **Space Complexity:** O(n) (Recursive call stack)
+* **Space Complexity:** O(n) (Normalized string storage)
 
 ---
 
 ## ✅ Conclusion
 
-Recursive palindrome validation provides a clean and elegant solution by applying **divide-and-conquer logic**.
-It helps learners understand **function calls, base conditions, and stack memory behavior** in Java.
+Normalized palindrome validation is a **practical and real-world approach** because it ignores formatting differences like spaces, punctuation, and letter case.
+This method improves understanding of **string manipulation, preprocessing, and logical comparison techniques** in Java.
 
 ---
 
@@ -125,4 +131,4 @@ sudheer200502
 
 ## 🔖 Version
 
-9.0
+10.0
