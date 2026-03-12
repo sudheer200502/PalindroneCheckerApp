@@ -1,23 +1,27 @@
 # Palindrome Checker Management System
 
-## Use Case 2 – Hardcoded Palindrome Validation
+## Use Case 3 – Reverse String Based Palindrome Check
 
 ## Overview
 
-This module demonstrates **basic palindrome validation in Java** using a predefined (hardcoded) string.
-A **palindrome** is a word, phrase, or sequence that reads the same forward and backward, such as:
+This module demonstrates a **palindrome validation approach by reversing a string and comparing it with the original string**.
 
-* `madam`
-* `racecar`
-* `level`
+A **palindrome** is a word, phrase, or sequence that reads the same forward and backward.
 
-The program compares characters from the **beginning and end of the string** and determines whether the string is a palindrome.
+Examples:
+
+* madam
+* racecar
+* level
+* noon
+
+The program reverses the given string and checks whether the reversed string matches the original.
 
 ---
 
 ## Objective
 
-The goal of this use case is to introduce the **core palindrome checking logic** before implementing user input or more advanced features.
+The purpose of this use case is to introduce **transformation-based palindrome validation** by creating a reversed version of the string and comparing the two values.
 
 ---
 
@@ -25,14 +29,11 @@ The goal of this use case is to introduce the **core palindrome checking logic**
 
 The application performs the following steps:
 
-1. Stores a **hardcoded string value**.
-2. Iterates through the string **only up to half of its length**.
-3. Compares:
-
-  * the character at the beginning
-  * with the corresponding character from the end
-4. If any characters do not match, the string is **not a palindrome**.
-5. Displays the **result in the console**.
+1. Stores a **hardcoded string**.
+2. Iterates through the string **from the last character to the first**.
+3. Builds a **reversed version** of the string.
+4. Compares the **original string** with the **reversed string**.
+5. Displays whether the string is a **palindrome or not**.
 
 ---
 
@@ -40,15 +41,12 @@ The application performs the following steps:
 
 ```
 1. Define a string (example: "madam")
-2. Set a boolean variable isPalindrome = true
-3. Loop from i = 0 to string length / 2
-4. Compare:
-      input.charAt(i)
-      input.charAt(length - 1 - i)
-5. If characters differ:
-      set isPalindrome = false
-      break loop
-6. Print result
+2. Create an empty string called reversed
+3. Loop from the last character of the string to the first
+4. Add each character to the reversed string
+5. Compare original string with reversed string
+6. If both are equal → Palindrome
+7. Otherwise → Not a palindrome
 ```
 
 ---
@@ -59,7 +57,7 @@ The application performs the following steps:
 PalindromeChecker/
 │
 ├── src/
-│   └── UseCase2PalindromeCheckerApp.java
+│   └── UseCase3PalindromeCheckerApp.java
 │
 └── README.md
 ```
@@ -78,13 +76,13 @@ PalindromeChecker/
 
 ---
 
-## How to Run
+## How to Run the Program
 
-1. Open the project in your IDE.
+1. Open the project in your Java IDE.
 2. Navigate to:
 
 ```
-UseCase2PalindromeCheckerApp.java
+UseCase3PalindromeCheckerApp.java
 ```
 
 3. Compile and run the program.
@@ -93,15 +91,19 @@ UseCase2PalindromeCheckerApp.java
 
 ## Example Output
 
+### Palindrome Example
+
 ```
-Input String: madam
+Original String: madam
+Reversed String: madam
 Result: The string is a palindrome.
 ```
 
-If the string is changed to a non-palindrome:
+### Non-Palindrome Example
 
 ```
-Input String: hello
+Original String: hello
+Reversed String: olleh
 Result: The string is NOT a palindrome.
 ```
 
@@ -111,29 +113,29 @@ Result: The string is NOT a palindrome.
 
 * Java `main()` method
 * String manipulation
-* `for` loop iteration
-* Character comparison using `charAt()`
-* Boolean logic
-* Basic algorithm design
+* Reverse iteration using `for` loop
+* Building strings dynamically
+* String comparison using `equals()`
+* Basic algorithm implementation
 
 ---
 
 ## Future Improvements
 
-Next versions of the system may include:
+Planned enhancements for the system:
 
-* User input using `Scanner`
-* Case-insensitive palindrome checking
-* Ignoring spaces and punctuation
-* Menu-based console application
-* Multiple palindrome tests
+* Accept **user input using Scanner**
+* Ignore **uppercase/lowercase differences**
+* Ignore **spaces and punctuation**
+* Add **menu-driven interface**
+* Store and display **palindrome history**
 
 ---
 
 ## Author
 
-Developer
+sudheer200502
 
-## sudheer200502
+## Version
 
-2.0
+3.0
