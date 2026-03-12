@@ -1,65 +1,62 @@
 /**
  * =========================================================
- * MAIN CLASS - UseCase8PalindromeCheckerApp
+ * MAIN CLASS - UseCase9RecursivePalindrome
  * =========================================================
  *
- * Use Case 8: Linked List Based Palindrome Checker
+ * Use Case 9: Recursive Palindrome Checker
  *
  * Description:
- * This class checks whether a string is a palindrome
- * using a LinkedList by comparing elements from
- * both the front and rear ends.
+ * This class validates a palindrome using recursion.
  *
  * Author: sudheer200502
- * Version: 8.0
+ * Version: 9.0
  */
 
-import java.util.*;
+import java.util.Scanner;
 
 public class PalindroneCheckerApp {
 
     /**
-     * Application entry point for UC8.
+     * Application entry point for UC9.
      * @param args Command-line arguments
      */
     public static void main(String[] args) {
 
         Scanner sc = new Scanner(System.in);
 
-        System.out.println("=== Palindrome Checker (LinkedList Method) ===");
+        System.out.println("=== Palindrome Checker (Recursion Method) ===");
         System.out.print("Enter a string: ");
         String input = sc.nextLine();
 
-        // Create LinkedList
-        LinkedList<Character> list = new LinkedList<>();
+        boolean result = check(input, 0, input.length() - 1);
 
-        // Add characters to the list
-        for (char c : input.toCharArray()) {
-            list.add(c);
-        }
-
-        // Assume palindrome initially
-        boolean isPalindrome = true;
-
-        // Compare from both ends
-        while (list.size() > 1) {
-
-            char first = list.removeFirst();
-            char last = list.removeLast();
-
-            if (first != last) {
-                isPalindrome = false;
-                break;
-            }
-        }
-
-        // Display result
-        if (isPalindrome) {
+        if (result) {
             System.out.println("Result: The given string is a PALINDROME.");
         } else {
             System.out.println("Result: The given string is NOT a palindrome.");
         }
 
         sc.close();
+    }
+
+    /**
+     * Recursively checks whether a string is palindrome
+     * @param s Input string
+     * @param start Starting index
+     * @param end Ending index
+     * @return true if palindrome, otherwise false
+     */
+    private static boolean check(String s, int start, int end) {
+
+        // Base condition
+        if (start >= end)
+            return true;
+
+        // Mismatch condition
+        if (s.charAt(start) != s.charAt(end))
+            return false;
+
+        // Recursive call
+        return check(s, start + 1, end - 1);
     }
 }
