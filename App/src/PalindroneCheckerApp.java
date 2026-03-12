@@ -1,49 +1,53 @@
 /**
  * =========================================================
- * MAIN CLASS - UseCase5PalindromeCheckerApp
+ * MAIN CLASS - UseCase6PalindromeCheckerApp
  * =========================================================
  *
- * Use Case 5: Stack Based Palindrome Checker
+ * Use Case 6: Queue + Stack Fairness Check
  *
  * Description:
- * This class validates a palindrome using a Stack
- * data structure which follows the LIFO principle.
+ * This class validates palindrome using two data structures:
+ * Queue (FIFO) and Stack (LIFO).
  *
  * Author: sudheer200502
- * Version: 5.0
+ * Version: 6.0
  */
 
-import java.util.Scanner;
-import java.util.Stack;
+import java.util.*;
 
 public class PalindroneCheckerApp {
 
     /**
-     * Application entry point for UC5.
+     * Application entry point for UC6.
      * @param args Command-line arguments
      */
     public static void main(String[] args) {
 
         Scanner sc = new Scanner(System.in);
 
-        System.out.println("=== Palindrome Checker (Stack Method) ===");
+        System.out.println("=== Palindrome Checker (Queue + Stack Method) ===");
         System.out.print("Enter a string: ");
         String input = sc.nextLine();
 
-        // Create a Stack to store characters
+        // Create Queue and Stack
+        Queue<Character> queue = new LinkedList<>();
         Stack<Character> stack = new Stack<>();
 
-        // Push each character of the string into the stack
+        // Insert characters into both structures
         for (char c : input.toCharArray()) {
-            stack.push(c);
+            queue.add(c);     // FIFO insertion
+            stack.push(c);    // LIFO insertion
         }
 
         // Assume palindrome initially
         boolean isPalindrome = true;
 
-        // Compare original string with stack pop sequence
-        for (char c : input.toCharArray()) {
-            if (c != stack.pop()) {
+        // Compare by removing from queue front and stack top
+        while (!queue.isEmpty()) {
+            char fromQueue = queue.remove();   // front element
+            char fromStack = stack.pop();      // top element
+
+            if (fromQueue != fromStack) {
                 isPalindrome = false;
                 break;
             }
