@@ -1,36 +1,43 @@
-# Palindrome Checker App – Use Case 5 (Stack Based Method)
+# Palindrome Checker App – Use Case 6 (Queue + Stack Method)
 
 ## 📌 Project Title
 
-**Palindrome Checker using Stack Data Structure (LIFO Principle)**
+**Palindrome Checker using Queue and Stack (FIFO + LIFO Fairness Check)**
 
 ---
 
 ## 📖 Description
 
-This Java console application checks whether a given string is a **palindrome** using a **Stack data structure**.
-The stack follows the **LIFO (Last In First Out)** principle which naturally helps in reversing the string.
+This Java console application validates whether a given string is a **palindrome** by using **two different data structures**:
 
-Each character of the string is **pushed into the stack**, and then characters are **popped in reverse order** and compared with the original string sequence to validate the palindrome.
+* **Queue** → follows **FIFO (First In First Out)** principle
+* **Stack** → follows **LIFO (Last In First Out)** principle
+
+Characters of the input string are inserted into both structures.
+Then comparison is done by **removing characters from the front of the queue and the top of the stack**.
+
+If all characters match symmetrically, the string is confirmed as a **palindrome**.
+
+This method demonstrates how **FIFO and LIFO behaviors can be combined for symmetric validation**.
 
 ---
 
 ## 🎯 Objective
 
-* To understand the working of **Stack (LIFO principle)**
-* To implement **palindrome validation using data structures**
-* To practice **push and pop operations**
-* To compare original and reversed sequences efficiently
+* To understand practical usage of **Queue and Stack**
+* To compare **FIFO vs LIFO behavior**
+* To implement palindrome validation using **multiple data structures**
+* To strengthen knowledge of **data structure operations**
 
 ---
 
 ## ⚙️ Features
 
 * Accepts user input from console
-* Uses **Stack<Character>** for storing characters
-* Automatically reverses string using stack behavior
+* Stores characters in both Queue and Stack
+* Performs symmetric comparison
 * Displays whether the string is **Palindrome / Not Palindrome**
-* Demonstrates practical use of data structures
+* Demonstrates fairness logic using two structures
 
 ---
 
@@ -38,24 +45,26 @@ Each character of the string is **pushed into the stack**, and then characters a
 
 1. Start the program
 2. Read a string from the user
-3. Create an empty stack
-4. Push each character of the string into the stack
+3. Create an empty Queue and Stack
+4. Insert each character into both structures
 5. Assume palindrome initially
-6. Traverse the original string again
-7. Pop characters from stack and compare
-8. If any mismatch → Not Palindrome
-9. Else continue comparison
-10. Display the result
-11. End the program
+6. Remove character from queue (front)
+7. Pop character from stack (top)
+8. Compare both characters
+9. If mismatch → Not Palindrome
+10. Else continue until queue becomes empty
+11. Display the result
+12. End the program
 
 ---
 
 ## 💻 Technologies Used
 
 * Java
-* Stack Class (java.util.Stack)
+* Queue Interface (LinkedList implementation)
+* Stack Class
 * Scanner Class
-* Loops and Conditional Statements
+* Looping & Conditional Statements
 
 ---
 
@@ -63,14 +72,14 @@ Each character of the string is **pushed into the stack**, and then characters a
 
 ### Compile
 
-```id="c8k2p9"
-javac UseCase5PalindromeCheckerApp.java
+```id="k9d3p2"
+javac UseCase6PalindromeCheckerApp.java
 ```
 
 ### Run
 
-```id="k3l9q1"
-java UseCase5PalindromeCheckerApp
+```id="f2m8q7"
+java UseCase6PalindromeCheckerApp
 ```
 
 ---
@@ -79,25 +88,25 @@ java UseCase5PalindromeCheckerApp
 
 **Input**
 
-```id="p1s8d2"
-Enter a string: noon
+```id="z8x1c4"
+Enter a string: level
 ```
 
 **Output**
 
-```id="z7x4m5"
+```id="u7n3b5"
 Result: The given string is a PALINDROME.
 ```
 
 **Input**
 
-```id="y6h2n9"
-Enter a string: world
+```id="w4e6r9"
+Enter a string: java
 ```
 
 **Output**
 
-```id="q4r8t1"
+```id="t1y5u8"
 Result: The given string is NOT a palindrome.
 ```
 
@@ -106,14 +115,14 @@ Result: The given string is NOT a palindrome.
 ## 📊 Time and Space Complexity
 
 * **Time Complexity:** O(n)
-* **Space Complexity:** O(n) (Extra space used by Stack)
+* **Space Complexity:** O(n) (Extra space used by Queue and Stack)
 
 ---
 
 ## ✅ Conclusion
 
-Using a **Stack data structure** makes palindrome checking intuitive because stack operations automatically reverse the character order.
-This method helps students understand **data structure application, LIFO behavior, and string processing concepts** in Java.
+Using both **Queue and Stack together** provides a clear understanding of how **FIFO and LIFO principles** can be applied in real problems like palindrome validation.
+This approach strengthens concepts related to **data structures, symmetric comparison, and algorithm design** in Java.
 
 ---
 
@@ -123,4 +132,4 @@ sudheer200502
 
 ## 🔖 Version
 
-5.0
+6.0
