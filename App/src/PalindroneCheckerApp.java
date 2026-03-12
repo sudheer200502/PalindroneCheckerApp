@@ -1,17 +1,17 @@
 /**
  * =========================================================
- * MAIN CLASS - UseCase7PalindromeCheckerApp
+ * MAIN CLASS - UseCase8PalindromeCheckerApp
  * =========================================================
  *
- * Use Case 7: Deque Based Optimized Palindrome Checker
+ * Use Case 8: Linked List Based Palindrome Checker
  *
  * Description:
- * This class validates a palindrome using a Deque
- * (Double Ended Queue) by comparing elements from
+ * This class checks whether a string is a palindrome
+ * using a LinkedList by comparing elements from
  * both the front and rear ends.
  *
  * Author: sudheer200502
- * Version: 7.0
+ * Version: 8.0
  */
 
 import java.util.*;
@@ -19,33 +19,33 @@ import java.util.*;
 public class PalindroneCheckerApp {
 
     /**
-     * Application entry point for UC7.
+     * Application entry point for UC8.
      * @param args Command-line arguments
      */
     public static void main(String[] args) {
 
         Scanner sc = new Scanner(System.in);
 
-        System.out.println("=== Palindrome Checker (Deque Method) ===");
+        System.out.println("=== Palindrome Checker (LinkedList Method) ===");
         System.out.print("Enter a string: ");
         String input = sc.nextLine();
 
-        // Create Deque
-        Deque<Character> deque = new LinkedList<>();
+        // Create LinkedList
+        LinkedList<Character> list = new LinkedList<>();
 
-        // Insert characters into deque
+        // Add characters to the list
         for (char c : input.toCharArray()) {
-            deque.addLast(c);
+            list.add(c);
         }
 
         // Assume palindrome initially
         boolean isPalindrome = true;
 
         // Compare from both ends
-        while (deque.size() > 1) {
+        while (list.size() > 1) {
 
-            char first = deque.removeFirst();
-            char last = deque.removeLast();
+            char first = list.removeFirst();
+            char last = list.removeLast();
 
             if (first != last) {
                 isPalindrome = false;
