@@ -1,35 +1,36 @@
-# Palindrome Checker App – Use Case 4 (Character Array Method)
+# Palindrome Checker App – Use Case 5 (Stack Based Method)
 
 ## 📌 Project Title
 
-**Palindrome Checker using Two-Pointer Technique (Character Array Based Validation)**
+**Palindrome Checker using Stack Data Structure (LIFO Principle)**
 
 ---
 
 ## 📖 Description
 
-This Java console application checks whether a given string is a **palindrome** by converting the string into a **character array** and comparing characters from the **start and end positions** using the **two-pointer technique**.
+This Java console application checks whether a given string is a **palindrome** using a **Stack data structure**.
+The stack follows the **LIFO (Last In First Out)** principle which naturally helps in reversing the string.
 
-This approach is efficient because it avoids creating additional strings (like reverse strings), thereby **reducing memory usage**.
+Each character of the string is **pushed into the stack**, and then characters are **popped in reverse order** and compared with the original string sequence to validate the palindrome.
 
 ---
 
 ## 🎯 Objective
 
-* To validate whether a string is a palindrome
-* To implement **character array processing**
-* To understand the **two-pointer algorithm**
-* To improve **time and space efficiency**
+* To understand the working of **Stack (LIFO principle)**
+* To implement **palindrome validation using data structures**
+* To practice **push and pop operations**
+* To compare original and reversed sequences efficiently
 
 ---
 
 ## ⚙️ Features
 
-* Accepts user input from the console
-* Converts string into a character array
-* Uses start and end pointers for comparison
+* Accepts user input from console
+* Uses **Stack<Character>** for storing characters
+* Automatically reverses string using stack behavior
 * Displays whether the string is **Palindrome / Not Palindrome**
-* Memory-efficient implementation
+* Demonstrates practical use of data structures
 
 ---
 
@@ -37,47 +38,40 @@ This approach is efficient because it avoids creating additional strings (like r
 
 1. Start the program
 2. Read a string from the user
-3. Convert the string into a character array
-4. Initialize:
-
-  * `start = 0`
-  * `end = length − 1`
-5. Compare characters at `start` and `end`
-6. If characters are not equal → Not Palindrome
-7. Else move pointers:
-
-  * `start++`
-  * `end--`
-8. Repeat until `start < end`
-9. Display the result
-10. End the program
+3. Create an empty stack
+4. Push each character of the string into the stack
+5. Assume palindrome initially
+6. Traverse the original string again
+7. Pop characters from stack and compare
+8. If any mismatch → Not Palindrome
+9. Else continue comparison
+10. Display the result
+11. End the program
 
 ---
 
 ## 💻 Technologies Used
 
 * Java
+* Stack Class (java.util.Stack)
 * Scanner Class
-* Arrays
-* Looping & Conditional Statements
+* Loops and Conditional Statements
 
 ---
 
 ## ▶️ How to Run
 
-1. Compile the program
+### Compile
 
-```
-javac UseCase4PalindromeCheckerApp.java
-```
-
-2. Run the program
-
-```
-java UseCase4PalindromeCheckerApp
+```id="c8k2p9"
+javac UseCase5PalindromeCheckerApp.java
 ```
 
-3. Enter a string when prompted
+### Run
+
+```id="k3l9q1"
+java UseCase5PalindromeCheckerApp
+```
 
 ---
 
@@ -85,25 +79,25 @@ java UseCase4PalindromeCheckerApp
 
 **Input**
 
-```
-Enter a string: madam
+```id="p1s8d2"
+Enter a string: noon
 ```
 
 **Output**
 
-```
+```id="z7x4m5"
 Result: The given string is a PALINDROME.
 ```
 
 **Input**
 
-```
-Enter a string: hello
+```id="y6h2n9"
+Enter a string: world
 ```
 
 **Output**
 
-```
+```id="q4r8t1"
 Result: The given string is NOT a palindrome.
 ```
 
@@ -112,15 +106,14 @@ Result: The given string is NOT a palindrome.
 ## 📊 Time and Space Complexity
 
 * **Time Complexity:** O(n)
-* **Space Complexity:** O(n) (for character array)
+* **Space Complexity:** O(n) (Extra space used by Stack)
 
 ---
 
 ## ✅ Conclusion
 
-The Character Array based palindrome checker is a simple and efficient method to validate palindromes.
-Using the **two-pointer technique** reduces unnecessary operations like string reversal and improves performance.
-This implementation helps in understanding **basic string processing, array traversal, and algorithm optimization** in Java.
+Using a **Stack data structure** makes palindrome checking intuitive because stack operations automatically reverse the character order.
+This method helps students understand **data structure application, LIFO behavior, and string processing concepts** in Java.
 
 ---
 
@@ -130,4 +123,4 @@ sudheer200502
 
 ## 🔖 Version
 
-4.0
+5.0
