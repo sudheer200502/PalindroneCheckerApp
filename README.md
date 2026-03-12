@@ -1,43 +1,43 @@
-# Palindrome Checker App – Use Case 6 (Queue + Stack Method)
+# Palindrome Checker App – Use Case 7 (Deque Based Optimized Method)
 
 ## 📌 Project Title
 
-**Palindrome Checker using Queue and Stack (FIFO + LIFO Fairness Check)**
+**Palindrome Checker using Deque (Double Ended Queue – Optimized Comparison)**
 
 ---
 
 ## 📖 Description
 
-This Java console application validates whether a given string is a **palindrome** by using **two different data structures**:
+This Java console application checks whether a given string is a **palindrome** using a **Deque (Double Ended Queue)** data structure.
 
-* **Queue** → follows **FIFO (First In First Out)** principle
-* **Stack** → follows **LIFO (Last In First Out)** principle
+A Deque allows insertion and deletion of elements from **both the front and rear ends**, which makes it ideal for **bidirectional comparison**.
+Characters of the string are inserted into the deque and then compared by removing elements using:
 
-Characters of the input string are inserted into both structures.
-Then comparison is done by **removing characters from the front of the queue and the top of the stack**.
+* `removeFirst()` → removes from the front
+* `removeLast()` → removes from the rear
 
-If all characters match symmetrically, the string is confirmed as a **palindrome**.
+If all corresponding characters match, the string is confirmed as a **palindrome**.
 
-This method demonstrates how **FIFO and LIFO behaviors can be combined for symmetric validation**.
+This approach is efficient because it **avoids explicit string reversal** and performs direct **front-to-back symmetric comparison**.
 
 ---
 
 ## 🎯 Objective
 
-* To understand practical usage of **Queue and Stack**
-* To compare **FIFO vs LIFO behavior**
-* To implement palindrome validation using **multiple data structures**
-* To strengthen knowledge of **data structure operations**
+* To understand the working of **Deque (Double Ended Queue)**
+* To implement **optimized palindrome validation**
+* To perform **bidirectional traversal**
+* To improve knowledge of **data structure based algorithms**
 
 ---
 
 ## ⚙️ Features
 
 * Accepts user input from console
-* Stores characters in both Queue and Stack
-* Performs symmetric comparison
+* Stores characters in a Deque
+* Compares characters from both ends
+* Efficient symmetric validation
 * Displays whether the string is **Palindrome / Not Palindrome**
-* Demonstrates fairness logic using two structures
 
 ---
 
@@ -45,24 +45,22 @@ This method demonstrates how **FIFO and LIFO behaviors can be combined for symme
 
 1. Start the program
 2. Read a string from the user
-3. Create an empty Queue and Stack
-4. Insert each character into both structures
+3. Create an empty Deque
+4. Insert each character at the rear of the deque
 5. Assume palindrome initially
-6. Remove character from queue (front)
-7. Pop character from stack (top)
-8. Compare both characters
-9. If mismatch → Not Palindrome
-10. Else continue until queue becomes empty
-11. Display the result
-12. End the program
+6. Remove first and last characters
+7. Compare both characters
+8. If mismatch → Not Palindrome
+9. Else continue until deque size becomes 0 or 1
+10. Display the result
+11. End the program
 
 ---
 
 ## 💻 Technologies Used
 
 * Java
-* Queue Interface (LinkedList implementation)
-* Stack Class
+* Deque Interface (LinkedList implementation)
 * Scanner Class
 * Looping & Conditional Statements
 
@@ -72,14 +70,14 @@ This method demonstrates how **FIFO and LIFO behaviors can be combined for symme
 
 ### Compile
 
-```id="k9d3p2"
-javac UseCase6PalindromeCheckerApp.java
+```id="m8p3x2"
+javac UseCase7PalindromeCheckerApp.java
 ```
 
 ### Run
 
-```id="f2m8q7"
-java UseCase6PalindromeCheckerApp
+```id="n4q7w1"
+java UseCase7PalindromeCheckerApp
 ```
 
 ---
@@ -88,25 +86,25 @@ java UseCase6PalindromeCheckerApp
 
 **Input**
 
-```id="z8x1c4"
-Enter a string: level
+```id="z2c6v9"
+Enter a string: radar
 ```
 
 **Output**
 
-```id="u7n3b5"
+```id="b5n8m1"
 Result: The given string is a PALINDROME.
 ```
 
 **Input**
 
-```id="w4e6r9"
-Enter a string: java
+```id="k1l4p7"
+Enter a string: coding
 ```
 
 **Output**
 
-```id="t1y5u8"
+```id="h3j9s5"
 Result: The given string is NOT a palindrome.
 ```
 
@@ -115,14 +113,14 @@ Result: The given string is NOT a palindrome.
 ## 📊 Time and Space Complexity
 
 * **Time Complexity:** O(n)
-* **Space Complexity:** O(n) (Extra space used by Queue and Stack)
+* **Space Complexity:** O(n) (Extra space used by Deque)
 
 ---
 
 ## ✅ Conclusion
 
-Using both **Queue and Stack together** provides a clear understanding of how **FIFO and LIFO principles** can be applied in real problems like palindrome validation.
-This approach strengthens concepts related to **data structures, symmetric comparison, and algorithm design** in Java.
+Using a **Deque** provides an optimized way to validate palindromes because it allows **simultaneous access to both ends** of the data structure.
+This method improves efficiency and demonstrates **advanced data structure usage, symmetric comparison, and algorithm optimization** in Java.
 
 ---
 
@@ -132,4 +130,4 @@ sudheer200502
 
 ## 🔖 Version
 
-6.0
+7.0
