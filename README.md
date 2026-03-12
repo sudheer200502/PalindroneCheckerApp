@@ -1,141 +1,133 @@
-# Palindrome Checker Management System
+# Palindrome Checker App – Use Case 4 (Character Array Method)
 
-## Use Case 3 – Reverse String Based Palindrome Check
+## 📌 Project Title
 
-## Overview
-
-This module demonstrates a **palindrome validation approach by reversing a string and comparing it with the original string**.
-
-A **palindrome** is a word, phrase, or sequence that reads the same forward and backward.
-
-Examples:
-
-* madam
-* racecar
-* level
-* noon
-
-The program reverses the given string and checks whether the reversed string matches the original.
+**Palindrome Checker using Two-Pointer Technique (Character Array Based Validation)**
 
 ---
 
-## Objective
+## 📖 Description
 
-The purpose of this use case is to introduce **transformation-based palindrome validation** by creating a reversed version of the string and comparing the two values.
+This Java console application checks whether a given string is a **palindrome** by converting the string into a **character array** and comparing characters from the **start and end positions** using the **two-pointer technique**.
 
----
-
-## How the Program Works
-
-The application performs the following steps:
-
-1. Stores a **hardcoded string**.
-2. Iterates through the string **from the last character to the first**.
-3. Builds a **reversed version** of the string.
-4. Compares the **original string** with the **reversed string**.
-5. Displays whether the string is a **palindrome or not**.
+This approach is efficient because it avoids creating additional strings (like reverse strings), thereby **reducing memory usage**.
 
 ---
 
-## Algorithm Logic
+## 🎯 Objective
+
+* To validate whether a string is a palindrome
+* To implement **character array processing**
+* To understand the **two-pointer algorithm**
+* To improve **time and space efficiency**
+
+---
+
+## ⚙️ Features
+
+* Accepts user input from the console
+* Converts string into a character array
+* Uses start and end pointers for comparison
+* Displays whether the string is **Palindrome / Not Palindrome**
+* Memory-efficient implementation
+
+---
+
+## 🧠 Algorithm
+
+1. Start the program
+2. Read a string from the user
+3. Convert the string into a character array
+4. Initialize:
+
+  * `start = 0`
+  * `end = length − 1`
+5. Compare characters at `start` and `end`
+6. If characters are not equal → Not Palindrome
+7. Else move pointers:
+
+  * `start++`
+  * `end--`
+8. Repeat until `start < end`
+9. Display the result
+10. End the program
+
+---
+
+## 💻 Technologies Used
+
+* Java
+* Scanner Class
+* Arrays
+* Looping & Conditional Statements
+
+---
+
+## ▶️ How to Run
+
+1. Compile the program
 
 ```
-1. Define a string (example: "madam")
-2. Create an empty string called reversed
-3. Loop from the last character of the string to the first
-4. Add each character to the reversed string
-5. Compare original string with reversed string
-6. If both are equal → Palindrome
-7. Otherwise → Not a palindrome
+javac UseCase4PalindromeCheckerApp.java
+```
+
+2. Run the program
+
+```
+java UseCase4PalindromeCheckerApp
+```
+
+3. Enter a string when prompted
+
+---
+
+## 🧪 Sample Input / Output
+
+**Input**
+
+```
+Enter a string: madam
+```
+
+**Output**
+
+```
+Result: The given string is a PALINDROME.
+```
+
+**Input**
+
+```
+Enter a string: hello
+```
+
+**Output**
+
+```
+Result: The given string is NOT a palindrome.
 ```
 
 ---
 
-## Project Structure
+## 📊 Time and Space Complexity
 
-```
-PalindromeChecker/
-│
-├── src/
-│   └── UseCase3PalindromeCheckerApp.java
-│
-└── README.md
-```
+* **Time Complexity:** O(n)
+* **Space Complexity:** O(n) (for character array)
 
 ---
 
-## Requirements
+## ✅ Conclusion
 
-* Java JDK 8 or higher
-* Any Java IDE or editor:
-
-  * IntelliJ IDEA
-  * Eclipse
-  * VS Code
-  * NetBeans
+The Character Array based palindrome checker is a simple and efficient method to validate palindromes.
+Using the **two-pointer technique** reduces unnecessary operations like string reversal and improves performance.
+This implementation helps in understanding **basic string processing, array traversal, and algorithm optimization** in Java.
 
 ---
 
-## How to Run the Program
-
-1. Open the project in your Java IDE.
-2. Navigate to:
-
-```
-UseCase3PalindromeCheckerApp.java
-```
-
-3. Compile and run the program.
-
----
-
-## Example Output
-
-### Palindrome Example
-
-```
-Original String: madam
-Reversed String: madam
-Result: The string is a palindrome.
-```
-
-### Non-Palindrome Example
-
-```
-Original String: hello
-Reversed String: olleh
-Result: The string is NOT a palindrome.
-```
-
----
-
-## Key Concepts Demonstrated
-
-* Java `main()` method
-* String manipulation
-* Reverse iteration using `for` loop
-* Building strings dynamically
-* String comparison using `equals()`
-* Basic algorithm implementation
-
----
-
-## Future Improvements
-
-Planned enhancements for the system:
-
-* Accept **user input using Scanner**
-* Ignore **uppercase/lowercase differences**
-* Ignore **spaces and punctuation**
-* Add **menu-driven interface**
-* Store and display **palindrome history**
-
----
-
-## Author
+## 👨‍💻 Author
 
 sudheer200502
 
-## Version
+## 🔖 Version
 
-3.0
+4.0
